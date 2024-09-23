@@ -1,1 +1,1 @@
-# CheegerConvexificationBounds
+# CheegerConvexificationBounds.jl
