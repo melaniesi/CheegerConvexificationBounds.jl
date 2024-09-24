@@ -1,0 +1,4 @@
+[deps]
+CheegerConvexificationBounds = "839d17a8-5eef-4f7a-ba95-c40dd0380129"
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
