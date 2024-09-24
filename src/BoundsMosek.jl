@@ -18,6 +18,7 @@
 module BoundsMosek
 
 using JuMP
+using LinearAlgebra
 using Mosek
 using MosekTools
 

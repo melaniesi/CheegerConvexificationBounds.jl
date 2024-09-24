@@ -16,12 +16,13 @@
 # ==========================================================================
 
 using CheegerConvexificationBounds
+using CheegerConvexificationBounds.BoundsMosek
 
 # Example with grevlex instance
 L = CheegerConvexificationBounds.GrevlexGrlexLaplacian.grevlex(7);
 
 # SDP relaxation of dimension n + 1
-lowerbound1, Yopt1, time1 = SDPRelax_dim_np1(L, dnn=true, bqp_b=false, diagcon=true);
+lowerbound1, Yopt1, time1 = SDPRelax_dim_np1(L, dnn=true, bqp_b=false);
 lowerbound1
 
 # SDP relaxation of dimension 2n + 3
