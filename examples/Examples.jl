@@ -32,19 +32,19 @@ lowerbound2
 # Lower bound from DNN-PFR solved with augmented Lagrangian approach
 paramsdnn = Parameters(1, 1e-6, 0.6, 0, 0, Int(maxintfloat()), 500,
                        eps_triviol=1e-3, min_newcuts_samealpha=50, eps_tripurge=1e-5, eps_correction=0.01,
-                       lbfgsb_maxiter=2000, lbfgsb_factr=1e8, lbfgsb_factr_last=1e8);
-result3 = lowerboundCheegerConvexification(Lbig, paramsdnn; diag_constraint=false);
+                       lbfgsb_maxiter=2000, lbfgsb_factr=1e8, lbfgsb_factr_last=1e8); 
+result3 = lowerboundCheegerConvexification(L, paramsdnn; diag_constraint=false);
 result3["lb"]
 # Lower bound from DNN-PFRC solved with augmented Lagrangian approach
 params = Parameters(1, 1e-6, 0.6, 500, 10000, 5, 500,
                     eps_triviol=1e-3, min_newcuts_samealpha=50, eps_tripurge=1e-5, eps_correction=0.001,
                     lbfgsb_maxiter=2000, lbfgsb_factr=1e8, lbfgsb_factr_last=1e8);
-result4 = lowerboundCheegerConvexification(Lbig, params; diag_constraint=false);
+result4 = lowerboundCheegerConvexification(L, params; diag_constraint=false);
 result4["lb"]
 
 
 
 # Example with instance from Rudy file
 L = CheegerConvexificationBounds.RudyGraphIO.laplacian_from_RudyFile("rand01-7-32-0.dat");
-result = lowerboundCheegerConvexification(Lbig, params; diag_constraint=false);
+result = lowerboundCheegerConvexification(L, params; diag_constraint=false);
 result["lb"]

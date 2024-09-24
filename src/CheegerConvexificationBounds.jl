@@ -104,6 +104,28 @@ struct TriangleIneq
 end
 
 """
+    getLbig(L)
+
+Return the cost matrix for the SDP relaxation of dimension 2n + 3.
+
+Cost matrix formed by the Laplacian matrix `L` of the graph and of the form
+```
+                 ╭                 ╮
+                 │  L    0     0   │
+    Lbig = 0.5 * │  0    L     0   │ .
+                 |  0    0     0   |
+                 ╰                 ╯  
+
+"""
+function getLbig(L)
+    n = size(L, 1)
+    return Symmetric([1//2 * L     zeros(n, (n + 3))  ;
+                    zeros(n,n)  1/2 * L  zeros(n,3);
+                    zeros(3,(2 * n + 3))]);
+end
+
+
+"""
     projection_PSD_cone(M)
 
 Compute the projection of the matrix `M`
@@ -502,18 +524,12 @@ end
 
 
 """
-    lowerboundCheegerConvexification(Lbig, params::Parameters)
+    lowerboundCheegerConvexification(L, params::Parameters)
 
 Compute a lower bound on the Cheeger constant of a graph.
 
 # Arguments:
-- `Lbig::Matrix`      :  Instance matrix formed by the Laplacian matrix `L` of the graph a
-```
-                 ╭                 ╮
-                 │  L    0     0   │
-    Lbig = 0.5 * │  0    L     0   │ 
-                 |  0    0     0   |
-                 ╰                 ╯  
+- `L::Matrix`: Laplacian matrix representing the graph.
 ```
 - `params::Parameters`:  Parameters for the algorithm.
 
@@ -534,9 +550,11 @@ A dictionary with the following fields is returned.
 - `S`               :  Value of matrix `S` at the end of algorithm.
 - `iterations_extra`:  The number of additional iterations performed at the end.
 """
-function lowerboundCheegerConvexification(Lbig, params::Parameters; diag_constraint=true)
+function lowerboundCheegerConvexification(L, params::Parameters; diag_constraint=true)
     start_time = now()
-    n = (size(Lbig,1) - 3 ) >> 1
+    n = size(L,1)
+    Lbig = getLbig(L)
+    
     dim_S = 2*n + 3
     len_vecS = dim_S * (dim_S + 1) >> 1
     n_eqconstraints = diag_constraint ? 3*n + 1 : n + 1
