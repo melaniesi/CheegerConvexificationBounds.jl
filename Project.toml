@@ -3,5 +3,16 @@ uuid = "839d17a8-5eef-4f7a-ba95-c40dd0380129"
 authors = ["Melanie Siebenhofer <melaniesi@edu.aau.at> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+LBFGSB = "5be7bae1-8223-5378-bac3-9e7378a2f6e6"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+MKL = "33e6dc65-8f57-5167-99aa-e5a354878fb2"
+Mosek = "6405355b-0ac2-5fba-af84-adbd65488c0e"
+MosekTools = "1ec41992-ff65-5c91-ac43-2df89e9693a4"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+
 [compat]
 julia = "1.10"
