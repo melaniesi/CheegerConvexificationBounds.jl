@@ -45,7 +45,7 @@ Data structure for the parameters of the algorithm to compute a lower bound of t
 
 # Optional Arguments:
 - `niterations_nocutsstart=5`: The number of iterations before cuts are added.
-- `niterations_end=100`:       The maximum number of iterations at the end where no new cuts are added and
+- `niterations_end=500`:       The maximum number of iterations at the end where no new cuts are added and
                                α isn't decreased (so it is minimal).
 
 # Keyword Arguments
@@ -77,7 +77,7 @@ struct Parameters
     lbfgsb_maxiter::Int64
     lbfgsb_m::Int64
     Parameters(alpha_start, alpha_min, alphascale, max_newcuts, max_cutstotal, niterations_nocutsstart=5,
-               niterations_end=100; min_newcuts_samealpha=50, eps_triviol=1e-3, eps_tripurge=1e-5, nopurge_lastrounds=false, eps_correction=0.01,
+               niterations_end=500; min_newcuts_samealpha=50, eps_triviol=1e-3, eps_tripurge=1e-5, nopurge_lastrounds=false, eps_correction=0.01,
                lbfgsb_factr=1e8, lbfgsb_factr_last=1e8, lbfgsb_maxiter=2000, lbfgsb_m=10) =
                     any(<(0), [alpha_start, alpha_min, alphascale, max_newcuts, max_cutstotal, niterations_end, niterations_nocutsstart,
                                lbfgsb_factr, lbfgsb_factr_last, lbfgsb_maxiter]) || lbfgsb_m < 3 || lbfgsb_m > 20 ? 
