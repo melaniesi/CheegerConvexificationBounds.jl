@@ -11,7 +11,7 @@ where $\lvert \partial S \rvert$ denotes the size of the cut induced by the set 
 ```
 
 ### Installation
-To enter the package mode press ```]``` and to exit press ```backspace```
+To enter the package mode in Julia press ```]``` and to exit press ```backspace```.
 ```julia
 pkg> add https://github.com/melaniesi/CheegerConvexificationBounds.jl.git
 ```
