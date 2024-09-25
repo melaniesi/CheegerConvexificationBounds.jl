@@ -25,7 +25,7 @@ julia> ncutsnew_max = 500; ncuts_max = 10000;
 julia> params = Parameters(alpha_start, alpha_min, alpha_scale,
                             ncutsnew_max, ncuts_max, eps_correction=0.001);
 julia> result = lowerboundCheegerConvexification(L, params; diag_constraint=false);
-                                                            ┏━━━━━━━━━━━━━━━━━━━━━━━━┓                             
+                                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━┓                             
                                                              ┃        C  U  T  S      ┃                             
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃━━━━━━━━━━━━━━━━━━━━━━━━┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃    primal          dual            fopt          alpha     ┃  total   new   removed ┃   time_elapsed   iteration ┃
