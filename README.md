@@ -72,4 +72,4 @@ More examples can be found in the folder [`examples/`](examples/) of this projec
 ### References
 This package is part of the publication
 
-Timotej Hrga, Melanie Siebenhofer, Angelika Wiegele. (2024). _Connectivity via convexity: Bounds on the edge expansion in graphs._ [Manuscript in preparation].
+Timotej Hrga, Melanie Siebenhofer, Angelika Wiegele. (2024). _Connectivity via convexity: Bounds on the edge expansion in graphs._ [submitted for publication].
