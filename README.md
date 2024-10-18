@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13950395.svg)](https://doi.org/10.5281/zenodo.13950395)
+
 # CheegerConvexificationBounds.jl
 
 Package to compute strong lower bounds on the edge expansion of an undirected graph $G = (V,E)$.
